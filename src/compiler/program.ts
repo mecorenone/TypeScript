@@ -947,7 +947,8 @@ export function getResolutionModeOverride(node: ImportAttributes | undefined, gr
     return elem.value.text === "import" ? ModuleKind.ESNext : ModuleKind.CommonJS;
 }
 
-const emptyResolution: ResolvedModuleWithFailedLookupLocations & ResolvedTypeReferenceDirectiveWithFailedLookupLocations = {
+/** @internal */
+export const emptyResolution: ResolvedModuleWithFailedLookupLocations & ResolvedTypeReferenceDirectiveWithFailedLookupLocations = {
     resolvedModule: undefined,
     resolvedTypeReferenceDirective: undefined,
 };
@@ -1111,6 +1112,13 @@ function forEachProjectReference<T>(
 
 /** @internal */
 export const inferredTypesContainingFile = "__inferred type names__.ts";
+
+/** @internal */
+export function getAutomaticTypeDirectiveContainingFile(options: CompilerOptions, currentDirectory: string) {
+    // This containingFilename needs to match with the one used in managed-side
+    const containingDirectory = options.configFilePath ? getDirectoryPath(options.configFilePath) : currentDirectory;
+    return combinePaths(containingDirectory, inferredTypesContainingFile);
+}
 
 /** @internal */
 export function getInferredLibraryNameResolveFrom(options: CompilerOptions, currentDirectory: string, libFileName: string) {
@@ -1762,10 +1770,7 @@ export function createProgram(rootNamesOrOptions: readonly string[] | CreateProg
         automaticTypeDirectiveResolutions = createModeAwareCache();
         if (automaticTypeDirectiveNames.length) {
             tracing?.push(tracing.Phase.Program, "processTypeReferences", { count: automaticTypeDirectiveNames.length });
-            // This containingFilename needs to match with the one used in managed-side
-            const containingDirectory = options.configFilePath ? getDirectoryPath(options.configFilePath) : currentDirectory;
-            const containingFilename = combinePaths(containingDirectory, inferredTypesContainingFile);
-            const resolutions = resolveTypeReferenceDirectiveNamesReusingOldState(automaticTypeDirectiveNames, containingFilename);
+            const resolutions = resolveTypeReferenceDirectiveNamesReusingOldState(automaticTypeDirectiveNames, getAutomaticTypeDirectiveContainingFile(options, currentDirectory));
             for (let i = 0; i < automaticTypeDirectiveNames.length; i++) {
                 // under node16/nodenext module resolution, load `types`/ata include names as cjs resolution results by passing an `undefined` mode
                 automaticTypeDirectiveResolutions.set(automaticTypeDirectiveNames[i], /*mode*/ undefined, resolutions[i]);
@@ -2153,8 +2158,6 @@ export function createProgram(rootNamesOrOptions: readonly string[] | CreateProg
          */
         let result: ResolvedModuleWithFailedLookupLocations[] | undefined;
         let reusedNames: StringLiteralLike[] | undefined;
-        /** A transient placeholder used to mark predicted resolution in the result list. */
-        const predictedToResolveToAmbientModuleMarker: ResolvedModuleWithFailedLookupLocations = emptyResolution;
         const oldSourceFile = oldProgram && oldProgram.getSourceFile(file.fileName);
 
         for (let i = 0; i < moduleNames.length; i++) {
@@ -2197,7 +2200,7 @@ export function createProgram(rootNamesOrOptions: readonly string[] | CreateProg
             }
 
             if (resolvesToAmbientModuleInNonModifiedFile) {
-                (result || (result = new Array(moduleNames.length)))[i] = predictedToResolveToAmbientModuleMarker;
+                (result || (result = new Array(moduleNames.length)))[i] = emptyResolution;
             }
             else {
                 // Resolution failed in the old program, or resolved to an ambient module for which we can't reuse the result.
