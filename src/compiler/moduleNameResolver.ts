@@ -780,9 +780,9 @@ export function resolvePackageNameToPackageJson(
     containingDirectory: string,
     options: CompilerOptions,
     host: ModuleResolutionHost,
-    cache: ModuleResolutionCache | undefined,
+    cache: PackageJsonInfoCache | undefined,
 ): PackageJsonInfo | undefined {
-    const moduleResolutionState = getTemporaryModuleResolutionState(cache?.getPackageJsonInfoCache(), host, options);
+    const moduleResolutionState = getTemporaryModuleResolutionState(cache, host, options);
 
     return forEachAncestorDirectory(containingDirectory, ancestorDirectory => {
         if (getBaseFileName(ancestorDirectory) !== "node_modules") {
@@ -2193,7 +2193,7 @@ export function getEntrypointsFromPackageJsonInfo(
     packageJsonInfo: PackageJsonInfo,
     options: CompilerOptions,
     host: GetPackageJsonEntrypointsHost,
-    cache: ModuleResolutionCache | undefined,
+    cache: PackageJsonInfoCache | undefined,
     resolveJs?: boolean,
 ): string[] | false {
     if (!resolveJs && packageJsonInfo.contents.resolvedEntrypoints !== undefined) {
@@ -2205,7 +2205,7 @@ export function getEntrypointsFromPackageJsonInfo(
     let entrypoints: string[] | undefined;
     const extensions = Extensions.TypeScript | Extensions.Declaration | (resolveJs ? Extensions.JavaScript : 0);
     const features = getNodeResolutionFeatures(options);
-    const loadPackageJsonMainState = getTemporaryModuleResolutionState(cache?.getPackageJsonInfoCache(), host, options);
+    const loadPackageJsonMainState = getTemporaryModuleResolutionState(cache, host, options);
     loadPackageJsonMainState.conditions = getConditions(options);
     loadPackageJsonMainState.requestContainingDirectory = packageJsonInfo.packageDirectory;
     const mainResolution = loadNodeModuleFromDirectoryWorker(
