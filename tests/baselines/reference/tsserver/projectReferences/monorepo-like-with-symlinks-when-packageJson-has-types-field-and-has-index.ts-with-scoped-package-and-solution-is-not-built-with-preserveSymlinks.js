@@ -165,12 +165,6 @@ Info seq  [hh:mm:ss:mss] 	Files (4)
 	  Matched by include pattern 'src' in 'tsconfig.json'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/lib/lib.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/packages/b/src/index.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/packages/b/src/bar.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/packages/a/src/index.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,

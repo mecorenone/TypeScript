@@ -350,18 +350,6 @@ Info seq  [hh:mm:ss:mss] 	Files (10)
 	  Entry point for implicit type library 'sometype'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 10
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/lib/lib.es5.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/lib/lib.dom.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/lib/lib.webworker.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/lib/lib.scripthost.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/projects/project1/core.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/projects/project1/file.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/projects/project1/file2.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/projects/project1/index.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/projects/project1/utils.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/projects/project1/typeroot1/sometype/index.d.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 10 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -572,9 +560,6 @@ Info seq  [hh:mm:ss:mss] 	Files (10)
 	  Entry point for implicit type library 'sometype'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 10
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/projects/node_modules/@typescript/lib-dom/index.d.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 10 Done: []
 Info seq  [hh:mm:ss:mss] Running: *ensureProjectForOpenFiles*
 Info seq  [hh:mm:ss:mss] Before ensureProjectForOpenFiles:
 Info seq  [hh:mm:ss:mss] Project '/home/src/projects/project1/tsconfig.json' (Configured)
@@ -770,8 +755,6 @@ Info seq  [hh:mm:ss:mss] 	Files (9)
 	  Entry point for implicit type library 'sometype'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 9
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 9 Done: []
 Info seq  [hh:mm:ss:mss] Running: *ensureProjectForOpenFiles*
 Info seq  [hh:mm:ss:mss] Before ensureProjectForOpenFiles:
 Info seq  [hh:mm:ss:mss] Project '/home/src/projects/project1/tsconfig.json' (Configured)
@@ -899,8 +882,6 @@ Info seq  [hh:mm:ss:mss] 	Files (9)
 	  Entry point for implicit type library 'sometype'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 9
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 9 Done: []
 Info seq  [hh:mm:ss:mss] Running: *ensureProjectForOpenFiles*
 Info seq  [hh:mm:ss:mss] Before ensureProjectForOpenFiles:
 Info seq  [hh:mm:ss:mss] Project '/home/src/projects/project1/tsconfig.json' (Configured)
@@ -1022,17 +1003,6 @@ Info seq  [hh:mm:ss:mss] 	Files (9)
 	/home/src/projects/project1/typeroot1/sometype/index.d.ts Text-1 "export type TheNum = \"type1\";"
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 9
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/lib/lib.es5.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/lib/lib.dom.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/lib/lib.webworker.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/lib/lib.scripthost.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/projects/project1/file.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/projects/project1/file2.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/projects/project1/index.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/projects/project1/utils.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/projects/project1/typeroot1/sometype/index.d.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 9 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -1253,17 +1223,6 @@ Info seq  [hh:mm:ss:mss] 	Files (9)
 	  Entry point for implicit type library 'sometype'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 9
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/lib/lib.es5.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/lib/lib.webworker.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/lib/lib.scripthost.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/projects/node_modules/@typescript/lib-dom/index.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/projects/project1/file.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/projects/project1/file2.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/projects/project1/index.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/projects/project1/utils.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/projects/project1/typeroot1/sometype/index.d.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 9 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -1447,9 +1406,6 @@ Info seq  [hh:mm:ss:mss] 	Files (9)
 	  Entry point for implicit type library 'sometype'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 9
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/projects/node_modules/@typescript/lib-webworker/index.d.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 9 Done: []
 Info seq  [hh:mm:ss:mss] Running: *ensureProjectForOpenFiles*
 Info seq  [hh:mm:ss:mss] Before ensureProjectForOpenFiles:
 Info seq  [hh:mm:ss:mss] Project '/home/src/projects/project1/tsconfig.json' (Configured)
@@ -1575,8 +1531,6 @@ Info seq  [hh:mm:ss:mss] 	Files (9)
 	  Entry point for implicit type library 'sometype'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 9
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 9 Done: []
 Info seq  [hh:mm:ss:mss] Running: *ensureProjectForOpenFiles*
 Info seq  [hh:mm:ss:mss] Before ensureProjectForOpenFiles:
 Info seq  [hh:mm:ss:mss] Project '/home/src/projects/project1/tsconfig.json' (Configured)

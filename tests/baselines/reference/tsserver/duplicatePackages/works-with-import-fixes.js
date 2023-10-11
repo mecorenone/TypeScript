@@ -94,12 +94,6 @@ Info seq  [hh:mm:ss:mss] 	Files (4)
 	  Matched by default include pattern '**/*'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/node_modules/foo/index.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/user.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /b/node_modules/foo/index.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /b/user.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,

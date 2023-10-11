@@ -115,11 +115,6 @@ Info seq  [hh:mm:ss:mss] 	Files (3)
 	  Entry point for implicit type library 'file2'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 3
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/lib/lib.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /users/username/dev/project/index.ts:: ["file2"]
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /users/username/dev/project/types/file2/index.d.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 3 Done: ["file2"]
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
