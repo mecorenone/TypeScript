@@ -302,10 +302,6 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	  Matched by default include pattern '**/*'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/lib/lib.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/main/main.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -454,10 +450,6 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	  Matched by default include pattern '**/*'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/lib/lib.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/dependency/fns.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -625,10 +617,6 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	  Matched by default include pattern '**/*'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/lib/lib.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/random/random.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,

@@ -85,9 +85,6 @@ Info seq  [hh:mm:ss:mss] 	Files (1)
 	  Matched by default include pattern '**/*'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 1
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/index.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 1 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -296,8 +293,6 @@ Info seq  [hh:mm:ss:mss] Project '/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (0)
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 0
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 0 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -386,10 +381,6 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	  Matched by default include pattern '**/*'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/index.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /b/index.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,

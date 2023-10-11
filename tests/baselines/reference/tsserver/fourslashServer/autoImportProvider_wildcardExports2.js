@@ -159,12 +159,6 @@ Info seq  [hh:mm:ss:mss] 	Files (4)
 	  File is ECMAScript module because 'package.json' has field "type" with value "module"
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.decorators.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.decorators.legacy.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /main.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4 Done: []
 Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /package.json 250 undefined WatchType: package.json file
 Info seq  [hh:mm:ss:mss] AutoImportProviderProject: found 1 root files in 1 dependencies in * ms
 Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /node_modules/pkg/lib/core/test.d.ts 500 undefined WatchType: Closed Script info
@@ -182,9 +176,6 @@ Info seq  [hh:mm:ss:mss] 	Files (1)
 	  File is CommonJS module because 'node_modules/pkg/package.json' does not have field "type"
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 1
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /node_modules/pkg/lib/core/test.d.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 1 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,

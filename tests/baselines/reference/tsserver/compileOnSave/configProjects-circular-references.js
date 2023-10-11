@@ -69,10 +69,6 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	  Referenced via './file1.ts' from file 'file2.ts'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/b/file2.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/b/file1.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,

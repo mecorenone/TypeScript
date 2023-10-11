@@ -52,8 +52,6 @@ Info seq  [hh:mm:ss:mss] Project '/a/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (0)
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 0
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 0 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -150,11 +148,6 @@ Info seq  [hh:mm:ss:mss] 	Files (3)
 	  Entry point for implicit type library 'typings'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 3
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/app.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/node_modules/@types/typings/lib.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/node_modules/@types/typings/index.d.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 3 Done: []
 Info seq  [hh:mm:ss:mss] Project '/a/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (0)
 

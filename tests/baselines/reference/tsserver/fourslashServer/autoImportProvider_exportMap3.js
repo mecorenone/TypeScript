@@ -106,12 +106,6 @@ Info seq  [hh:mm:ss:mss] 	Files (4)
 	  File is ECMAScript module because 'package.json' has field "type" with value "module"
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.decorators.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.decorators.legacy.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /src/foo.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -172,9 +166,6 @@ Info seq  [hh:mm:ss:mss] 	Files (1)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 1
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /node_modules/dependency/lib/index.d.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 1 Done: []
 Info seq  [hh:mm:ss:mss] Project '/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (4)
 
@@ -317,10 +308,6 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	  File is CommonJS module because 'node_modules/dependency/package.json' does not have field "type"
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /node_modules/dependency/lib/index.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /node_modules/dependency/lib/lol.d.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2 Done: []
 Info seq  [hh:mm:ss:mss] getExportInfoMap: cache miss or empty; calculating new results
 Info seq  [hh:mm:ss:mss] forEachExternalModuleToImportFrom autoImportProvider: *
 Info seq  [hh:mm:ss:mss] getExportInfoMap: done in * ms

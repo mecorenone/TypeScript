@@ -174,15 +174,6 @@ Info seq  [hh:mm:ss:mss] 	Files (7)
 	  Matched by default include pattern '**/*'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 7
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/lib/lib.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/product/module2.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/product/src/module1.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/product/src/file1.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/product/src/feature/file2.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/product/test/file4.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/product/test/src/file3.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 7 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -338,8 +329,6 @@ Info seq  [hh:mm:ss:mss] 	Files (7)
 	/user/username/projects/myproject/product/test/src/file3.ts Text-2 "import { module1 } from \"../../src/module1\";import { module2 } from \"../../module2\";import { module1 } from \"../../src/module1\";import { module2 } from \"../../module2\";"
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 7
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 7 Done: []
 Info seq  [hh:mm:ss:mss] Running: *ensureProjectForOpenFiles*
 Info seq  [hh:mm:ss:mss] Before ensureProjectForOpenFiles:
 Info seq  [hh:mm:ss:mss] Project '/user/username/projects/myproject/tsconfig.json' (Configured)

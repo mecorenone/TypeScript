@@ -85,10 +85,6 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	  Entry point of type library 'node' specified in compilerOptions with packageId '@types/node/index.d.ts@1.0.0'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /index.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /node_modules/@types/node/index.d.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2 Done: []
 Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /package.json 250 undefined WatchType: package.json file
 Info seq  [hh:mm:ss:mss] AutoImportProviderProject: found 1 root files in 1 dependencies in * ms
 Info seq  [hh:mm:ss:mss] Starting updateGraphWorker: Project: /dev/null/autoImportProviderProject1*

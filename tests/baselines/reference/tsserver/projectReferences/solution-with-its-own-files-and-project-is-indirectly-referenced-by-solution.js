@@ -116,13 +116,6 @@ Info seq  [hh:mm:ss:mss] 	Files (5)
 	  Part of 'files' list in tsconfig.json
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 5
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/lib/lib.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/src/helpers/functions.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/src/main.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/indirect1/main.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/own/main.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 5 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -209,11 +202,6 @@ Info seq  [hh:mm:ss:mss] 	Files (3)
 	  Matched by include pattern './src/**/*' in 'tsconfig-src.json'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 3
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/lib/lib.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/src/helpers/functions.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/src/main.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 3 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -566,10 +554,6 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/lib/lib.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /dummy/dummy.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2 Done: []
 Info seq  [hh:mm:ss:mss] Project '/user/username/projects/myproject/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (5)
 
@@ -802,13 +786,6 @@ Info seq  [hh:mm:ss:mss] 	Files (5)
 	  Part of 'files' list in tsconfig.json
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 5
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/lib/lib.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/src/helpers/functions.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/src/main.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/indirect1/main.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/own/main.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 5 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -851,11 +828,6 @@ Info seq  [hh:mm:ss:mss] 	Files (3)
 	  Matched by include pattern './src/**/*' in 'tsconfig-src.json'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 3
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/lib/lib.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/src/helpers/functions.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/src/main.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 3 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -1054,11 +1026,6 @@ Info seq  [hh:mm:ss:mss] 	Files (5)
 	  Part of 'files' list in tsconfig.json
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 5
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/src/main.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/indirect1/main.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/own/main.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 5 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -1116,9 +1083,6 @@ Info seq  [hh:mm:ss:mss] 	Files (3)
 	  Matched by include pattern './src/**/*' in 'tsconfig-src.json'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 3
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/src/main.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 3 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -1173,9 +1137,6 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /dummy/dummy.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2 Done: []
 Info seq  [hh:mm:ss:mss] After ensureProjectForOpenFiles:
 Info seq  [hh:mm:ss:mss] Project '/user/username/projects/myproject/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (5)
@@ -1312,12 +1273,6 @@ Info seq  [hh:mm:ss:mss] 	Files (4)
 	  Part of 'files' list in tsconfig.json
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/lib/lib.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/src/helpers/functions.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/src/main.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/indirect1/main.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -1423,12 +1378,6 @@ Info seq  [hh:mm:ss:mss] 	Files (4)
 	  Part of 'files' list in tsconfig.json
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/lib/lib.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/src/helpers/functions.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/src/main.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/indirect2/main.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -1781,12 +1730,6 @@ Info seq  [hh:mm:ss:mss] 	Files (4)
 	  Matched by default include pattern '**/*'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/lib/lib.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/target/src/helpers/functions.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/target/src/main.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/indirect3/main.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -2152,13 +2095,6 @@ Info seq  [hh:mm:ss:mss] 	Files (5)
 	  Part of 'files' list in tsconfig.json
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 5
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/lib/lib.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/src/helpers/functions.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/src/main.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/indirect1/main.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/own/main.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 5 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -2201,11 +2137,6 @@ Info seq  [hh:mm:ss:mss] 	Files (3)
 	  Matched by include pattern './src/**/*' in 'tsconfig-src.json'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 3
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/lib/lib.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/src/helpers/functions.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/src/main.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 3 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -2271,12 +2202,6 @@ Info seq  [hh:mm:ss:mss] 	Files (4)
 	  Part of 'files' list in tsconfig.json
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/lib/lib.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/src/helpers/functions.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/src/main.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/indirect1/main.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -2338,12 +2263,6 @@ Info seq  [hh:mm:ss:mss] 	Files (4)
 	  Part of 'files' list in tsconfig.json
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/lib/lib.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/src/helpers/functions.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/src/main.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/indirect2/main.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,

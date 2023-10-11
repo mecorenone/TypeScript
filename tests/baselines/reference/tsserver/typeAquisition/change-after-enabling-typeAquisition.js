@@ -110,10 +110,6 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	  Matched by default include pattern '**/*'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /users/user/projects/project1/node_modules/bar/index.js:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /users/user/projects/project1/app.js:: ["bar"]
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2 Done: ["bar"]
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -315,6 +311,10 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	/users/user/projects/project1/app.js SVC-1-0 "var x = require('bar');"
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /users/user/projects/project1/node_modules/bar/index.js:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /users/user/projects/project1/app.js:: ["bar"]
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2 Done: ["bar"]
 TI:: Creating typing installer
 
 TI:: [hh:mm:ss:mss] Global cache location '/users/user/projects/typings', safe file path '/safeList.json', types map path /typesMap.json

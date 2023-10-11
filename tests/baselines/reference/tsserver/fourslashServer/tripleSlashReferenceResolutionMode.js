@@ -88,10 +88,6 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	  File is CommonJS module because 'package.json' has field "type" whose value is not "module"
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /node_modules/pkg/import.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /index.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,

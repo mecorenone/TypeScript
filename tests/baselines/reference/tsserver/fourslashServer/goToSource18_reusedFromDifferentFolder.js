@@ -171,15 +171,6 @@ Info seq  [hh:mm:ss:mss] 	Files (7)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 7
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.decorators.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.decorators.legacy.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /node_modules/@types/yargs/callback.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /folder/random.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /node_modules/@types/yargs/index.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /some/index.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 7 Done: []
 Info seq  [hh:mm:ss:mss] Project '/dev/null/inferredProject1*' (Inferred)
 Info seq  [hh:mm:ss:mss] 	Files (6)
 
@@ -248,12 +239,6 @@ Info seq  [hh:mm:ss:mss] 	Files (4)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /node_modules/yargs/callback.js:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /folder/random.ts:: ["yargs"]
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /node_modules/yargs/index.js:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /some/index.ts:: ["yargs"]
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4 Done: ["yargs"]
 Info seq  [hh:mm:ss:mss] response:
     {
       "seq": 0,

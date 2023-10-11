@@ -88,11 +88,6 @@ Info seq  [hh:mm:ss:mss] 	Files (3)
 	  Matched by default include pattern '**/*'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 3
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/lib/lib.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/logger.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/another.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 3 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -340,9 +335,6 @@ Info seq  [hh:mm:ss:mss] 	Files (3)
 	/user/username/projects/myproject/another.ts SVC-1-1 "import { logger } from \"./logger\"; new logger();"
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 3
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/another.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 3 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,

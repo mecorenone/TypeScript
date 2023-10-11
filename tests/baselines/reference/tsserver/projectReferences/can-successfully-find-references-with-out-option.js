@@ -443,11 +443,6 @@ Info seq  [hh:mm:ss:mss] 	Files (3)
 	  Part of 'files' list in tsconfig.json
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 3
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/lib/lib.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/container/lib/index.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/container/compositeexec/index.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 3 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -603,10 +598,6 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	  Part of 'files' list in tsconfig.json
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/lib/lib.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/container/lib/index.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -716,8 +707,6 @@ Info seq  [hh:mm:ss:mss] Project '/user/username/projects/container/tsconfig.jso
 Info seq  [hh:mm:ss:mss] 	Files (0)
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 0
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 0 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -829,11 +818,6 @@ Info seq  [hh:mm:ss:mss] 	Files (3)
 	  Part of 'files' list in tsconfig.json
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 3
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/lib/lib.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/container/lib/index.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/container/exec/index.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 3 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
