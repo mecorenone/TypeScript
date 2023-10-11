@@ -1391,7 +1391,7 @@ export abstract class Project implements LanguageServiceHost, ModuleResolutionHo
                 );
             }
 
-            this.projectService.typingsCache.enqueueInstallTypingsForProject(this, this.lastCachedUnresolvedImportsList, hasAddedorRemovedFiles);
+            this.projectService.typingsCache.enqueueInstallTypingsForProject(this, hasAddedorRemovedFiles);
         }
         else {
             this.lastCachedUnresolvedImportsList = undefined;
@@ -1904,9 +1904,10 @@ export abstract class Project implements LanguageServiceHost, ModuleResolutionHo
         else {
             this.typeAcquisition = undefined;
         }
-        // If the typeAcquition is disabled, dont use typing files as root
+        // If the typeAcquition is disabled, dont use typing files as root and close existing watchers from TI
         if (!this.getTypeAcquisition().enable) {
             this.updateTypingFiles(/*typingFiles*/ undefined, /*scheduleUpdate*/ false);
+            this.projectService.typingsCache.onProjectClosed(this);
         }
     }
 
