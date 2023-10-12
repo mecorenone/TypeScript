@@ -1298,12 +1298,7 @@ export class ProjectService {
         switch (response.kind) {
             case ActionSet:
                 // Update the typing files and update the project
-                project.updateTypingsForProject(
-                    response.compilerOptions,
-                    response.typeAcquisition,
-                    response.unresolvedImports,
-                    response.typings,
-                );
+                project.updateTypingsForProject(response);
                 return;
             case ActionInvalidate:
                 // Do not clear resolution cache, there was changes detected in typings, so enque typing request and let it get us correct results
