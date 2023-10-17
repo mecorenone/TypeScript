@@ -104,6 +104,9 @@ Info seq  [hh:mm:ss:mss] 	Files (1)
 	  Matched by default include pattern '**/*'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 1
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/main.ts:: []
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 1 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -357,6 +360,9 @@ Info seq  [hh:mm:ss:mss] 	Files (1)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 1
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/main.js:: []
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 1 Done: []
 TI:: Creating typing installer
 
 TI:: [hh:mm:ss:mss] Global cache location '/a/data', safe file path '/safeList.json', types map path /typesMap.json
@@ -623,6 +629,9 @@ Info seq  [hh:mm:ss:mss] 	Files (1)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 1
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /main.js:: []
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 1 Done: []
 TI:: [hh:mm:ss:mss] Got install request
     {
       "projectName": "/dev/null/inferredProject2*",

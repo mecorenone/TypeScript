@@ -82,6 +82,13 @@ Info seq  [hh:mm:ss:mss] 	Files (5)
 	  Part of 'files' list in tsconfig.json
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 5
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.decorators.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.decorators.legacy.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /b/b.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/a.ts:: []
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 5 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -122,6 +129,12 @@ Info seq  [hh:mm:ss:mss] 	Files (4)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.decorators.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.decorators.legacy.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/tsconfig.json:: []
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4 Done: []
 Info seq  [hh:mm:ss:mss] Project '/a/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (5)
 
@@ -284,6 +297,12 @@ Info seq  [hh:mm:ss:mss] 	Files (4)
 	  Part of 'files' list in tsconfig.json
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.decorators.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.decorators.legacy.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /b/b.ts:: []
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,

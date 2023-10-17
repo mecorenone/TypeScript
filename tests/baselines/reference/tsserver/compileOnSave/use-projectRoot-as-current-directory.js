@@ -55,6 +55,10 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/lib/lib.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /root/typescriptproject3/typescriptproject3/foo.ts:: []
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,

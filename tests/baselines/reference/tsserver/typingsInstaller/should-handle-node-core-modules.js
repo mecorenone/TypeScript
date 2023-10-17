@@ -47,6 +47,10 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/lib/lib.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/b/app.js:: ["net","stream"]
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2 Done: ["net","stream"]
 TI:: Creating typing installer
 
 FsWatches::
@@ -318,6 +322,10 @@ Info seq  [hh:mm:ss:mss] 	Files (3)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 3
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /tmp/node_modules/node/index.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/b/app.js:: []
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 3 Done: []
 TI:: [hh:mm:ss:mss] Got install request
     {
       "projectName": "/dev/null/inferredProject1*",
@@ -467,6 +475,9 @@ Info seq  [hh:mm:ss:mss] 	Files (3)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 3
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/b/app.js:: ["s tream"]
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 3 Done: ["s tream"]
 TI:: [hh:mm:ss:mss] Got install request
     {
       "projectName": "/dev/null/inferredProject1*",
@@ -634,6 +645,9 @@ Info seq  [hh:mm:ss:mss] 	Files (3)
 	/a/b/app.js SVC-1-2 "// @ts-check\n\nconst bar = require(\"bar\");const net = require(\"net\");\nconst stream = require(\"s tream\");"
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 3
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/b/app.js:: ["bar","s tream"]
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 3 Done: ["bar","s tream"]
 TI:: [hh:mm:ss:mss] Got install request
     {
       "projectName": "/dev/null/inferredProject1*",

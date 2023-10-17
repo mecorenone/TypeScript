@@ -91,6 +91,13 @@ Info seq  [hh:mm:ss:mss] 	Files (5)
 	  Part of 'files' list in tsconfig.json
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 5
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /file1.js:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /file2.js:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /file3.mts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /file4.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /file5.js:: []
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 5 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,

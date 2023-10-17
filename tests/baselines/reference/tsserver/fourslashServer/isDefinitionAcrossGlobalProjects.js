@@ -205,6 +205,14 @@ Info seq  [hh:mm:ss:mss] 	Files (6)
 	  Part of 'files' list in tsconfig.json
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 6
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.decorators.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.decorators.legacy.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /b/index.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /c/index.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/index.ts:: []
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 6 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -307,6 +315,8 @@ Info seq  [hh:mm:ss:mss] Project '/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (0)
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 0
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 0 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -485,6 +495,12 @@ Info seq  [hh:mm:ss:mss] 	Files (4)
 	  Part of 'files' list in tsconfig.json
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.decorators.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.decorators.legacy.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /b/index.ts:: []
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -531,6 +547,12 @@ Info seq  [hh:mm:ss:mss] 	Files (4)
 	  Part of 'files' list in tsconfig.json
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.decorators.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.decorators.legacy.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /c/index.ts:: []
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,

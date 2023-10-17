@@ -29,6 +29,9 @@ Info seq  [hh:mm:ss:mss] 	Files (1)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 1
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /a.js:: ["b"]
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 1 Done: ["b"]
 TI:: Creating typing installer
 
 PolledWatches::

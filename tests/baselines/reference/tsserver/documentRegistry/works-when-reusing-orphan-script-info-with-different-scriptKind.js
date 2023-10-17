@@ -38,6 +38,9 @@ Info seq  [hh:mm:ss:mss] 	Files (1)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 1
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /users/user/projects/san/^/inmemory/model/6:: ["react"]
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 1 Done: ["react"]
 Info seq  [hh:mm:ss:mss] Project '/dev/null/inferredProject1*' (Inferred)
 Info seq  [hh:mm:ss:mss] 	Files (1)
 
@@ -95,6 +98,9 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /users/user/projects/san/^/inmemory/model/4:: ["react"]
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2 Done: ["react"]
 Info seq  [hh:mm:ss:mss] Project '/dev/null/inferredProject1*' (Inferred)
 Info seq  [hh:mm:ss:mss] 	Files (2)
 
@@ -186,6 +192,9 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /users/user/projects/san/^/inmemory/model/4:: []
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2 Done: ["react"]
 Info seq  [hh:mm:ss:mss] Project '/dev/null/inferredProject1*' (Inferred)
 Info seq  [hh:mm:ss:mss] 	Files (2)
 

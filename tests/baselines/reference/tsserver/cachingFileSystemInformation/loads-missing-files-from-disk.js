@@ -62,6 +62,9 @@ Info seq  [hh:mm:ss:mss] 	Files (1)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 1
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /users/username/projects/project/foo.ts:: ["bar"]
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 1 Done: ["bar"]
 Info seq  [hh:mm:ss:mss] Project '/dev/null/inferredProject1*' (Inferred)
 Info seq  [hh:mm:ss:mss] 	Files (1)
 
@@ -372,6 +375,10 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /users/username/projects/project/bar.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /users/username/projects/project/foo.ts:: []
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2 Done: []
 Info seq  [hh:mm:ss:mss] getSemanticDiagnostics:: /users/username/projects/project/foo.ts:: 0
 Info seq  [hh:mm:ss:mss] fileExists:: [
   {

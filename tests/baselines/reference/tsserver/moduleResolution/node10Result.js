@@ -396,6 +396,12 @@ Info seq  [hh:mm:ss:mss] 	Files (4)
 	  Part of 'files' list in tsconfig.json
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/lib/lib.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/projects/project/node_modules/foo2/index.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/projects/project/node_modules/@types/bar2/index.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/projects/project/index.mts:: ["foo","bar"]
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4 Done: ["bar","foo"]
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
@@ -838,6 +844,8 @@ Info seq  [hh:mm:ss:mss] 	Files (4)
 	/home/src/projects/project/index.mts SVC-1-0 "import { foo } from \"foo\";\nimport { bar } from \"bar\";\nimport { foo2 } from \"foo2\";\nimport { bar2 } from \"bar2\";\n"
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4 Done: ["bar","foo"]
 Info seq  [hh:mm:ss:mss] Running: *ensureProjectForOpenFiles*
 Info seq  [hh:mm:ss:mss] Before ensureProjectForOpenFiles:
 Info seq  [hh:mm:ss:mss] Project '/home/src/projects/project/tsconfig.json' (Configured)
@@ -1148,6 +1156,8 @@ Info seq  [hh:mm:ss:mss] 	Files (4)
 	/home/src/projects/project/index.mts SVC-1-0 "import { foo } from \"foo\";\nimport { bar } from \"bar\";\nimport { foo2 } from \"foo2\";\nimport { bar2 } from \"bar2\";\n"
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4 Done: ["bar","foo"]
 Info seq  [hh:mm:ss:mss] Running: *ensureProjectForOpenFiles*
 Info seq  [hh:mm:ss:mss] Before ensureProjectForOpenFiles:
 Info seq  [hh:mm:ss:mss] Project '/home/src/projects/project/tsconfig.json' (Configured)
@@ -1466,6 +1476,8 @@ Info seq  [hh:mm:ss:mss] 	Files (4)
 	/home/src/projects/project/index.mts SVC-1-0 "import { foo } from \"foo\";\nimport { bar } from \"bar\";\nimport { foo2 } from \"foo2\";\nimport { bar2 } from \"bar2\";\n"
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4 Done: ["bar","foo"]
 Info seq  [hh:mm:ss:mss] Running: *ensureProjectForOpenFiles*
 Info seq  [hh:mm:ss:mss] Before ensureProjectForOpenFiles:
 Info seq  [hh:mm:ss:mss] Project '/home/src/projects/project/tsconfig.json' (Configured)
@@ -1765,6 +1777,8 @@ Info seq  [hh:mm:ss:mss] 	Files (4)
 	/home/src/projects/project/index.mts SVC-1-0 "import { foo } from \"foo\";\nimport { bar } from \"bar\";\nimport { foo2 } from \"foo2\";\nimport { bar2 } from \"bar2\";\n"
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4 Done: ["bar","foo"]
 Info seq  [hh:mm:ss:mss] Running: *ensureProjectForOpenFiles*
 Info seq  [hh:mm:ss:mss] Before ensureProjectForOpenFiles:
 Info seq  [hh:mm:ss:mss] Project '/home/src/projects/project/tsconfig.json' (Configured)
@@ -2070,6 +2084,10 @@ Info seq  [hh:mm:ss:mss] 	Files (5)
 	  Part of 'files' list in tsconfig.json
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 5
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/projects/project/node_modules/@types/bar/index.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/projects/project/index.mts:: ["foo"]
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 5 Done: ["foo"]
 Info seq  [hh:mm:ss:mss] Running: *ensureProjectForOpenFiles*
 Info seq  [hh:mm:ss:mss] Before ensureProjectForOpenFiles:
 Info seq  [hh:mm:ss:mss] Project '/home/src/projects/project/tsconfig.json' (Configured)
@@ -2362,6 +2380,10 @@ Info seq  [hh:mm:ss:mss] 	Files (6)
 	  Part of 'files' list in tsconfig.json
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 6
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/projects/project/node_modules/foo/index.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/projects/project/index.mts:: []
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 6 Done: []
 Info seq  [hh:mm:ss:mss] Running: *ensureProjectForOpenFiles*
 Info seq  [hh:mm:ss:mss] Before ensureProjectForOpenFiles:
 Info seq  [hh:mm:ss:mss] Project '/home/src/projects/project/tsconfig.json' (Configured)
@@ -2712,6 +2734,9 @@ Info seq  [hh:mm:ss:mss] 	Files (5)
 	  Part of 'files' list in tsconfig.json
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 5
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/projects/project/index.mts:: ["bar2"]
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 5 Done: ["bar2"]
 Info seq  [hh:mm:ss:mss] Running: *ensureProjectForOpenFiles*
 Info seq  [hh:mm:ss:mss] Before ensureProjectForOpenFiles:
 Info seq  [hh:mm:ss:mss] Project '/home/src/projects/project/tsconfig.json' (Configured)
@@ -3050,6 +3075,9 @@ Info seq  [hh:mm:ss:mss] 	Files (4)
 	  Part of 'files' list in tsconfig.json
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /home/src/projects/project/index.mts:: ["foo2","bar2"]
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4 Done: ["bar2","foo2"]
 Info seq  [hh:mm:ss:mss] Running: *ensureProjectForOpenFiles*
 Info seq  [hh:mm:ss:mss] Before ensureProjectForOpenFiles:
 Info seq  [hh:mm:ss:mss] Project '/home/src/projects/project/tsconfig.json' (Configured)
@@ -3379,6 +3407,8 @@ Info seq  [hh:mm:ss:mss] 	Files (4)
 	/home/src/projects/project/index.mts SVC-1-0 "import { foo } from \"foo\";\nimport { bar } from \"bar\";\nimport { foo2 } from \"foo2\";\nimport { bar2 } from \"bar2\";\n"
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4 Done: ["bar2","foo2"]
 Info seq  [hh:mm:ss:mss] Running: *ensureProjectForOpenFiles*
 Info seq  [hh:mm:ss:mss] Before ensureProjectForOpenFiles:
 Info seq  [hh:mm:ss:mss] Project '/home/src/projects/project/tsconfig.json' (Configured)
@@ -3689,6 +3719,8 @@ Info seq  [hh:mm:ss:mss] 	Files (4)
 	/home/src/projects/project/index.mts SVC-1-0 "import { foo } from \"foo\";\nimport { bar } from \"bar\";\nimport { foo2 } from \"foo2\";\nimport { bar2 } from \"bar2\";\n"
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4 Done: ["bar2","foo2"]
 Info seq  [hh:mm:ss:mss] Running: *ensureProjectForOpenFiles*
 Info seq  [hh:mm:ss:mss] Before ensureProjectForOpenFiles:
 Info seq  [hh:mm:ss:mss] Project '/home/src/projects/project/tsconfig.json' (Configured)
@@ -4007,6 +4039,8 @@ Info seq  [hh:mm:ss:mss] 	Files (4)
 	/home/src/projects/project/index.mts SVC-1-0 "import { foo } from \"foo\";\nimport { bar } from \"bar\";\nimport { foo2 } from \"foo2\";\nimport { bar2 } from \"bar2\";\n"
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4 Done: ["bar2","foo2"]
 Info seq  [hh:mm:ss:mss] Running: *ensureProjectForOpenFiles*
 Info seq  [hh:mm:ss:mss] Before ensureProjectForOpenFiles:
 Info seq  [hh:mm:ss:mss] Project '/home/src/projects/project/tsconfig.json' (Configured)
@@ -4306,6 +4340,8 @@ Info seq  [hh:mm:ss:mss] 	Files (4)
 	/home/src/projects/project/index.mts SVC-1-0 "import { foo } from \"foo\";\nimport { bar } from \"bar\";\nimport { foo2 } from \"foo2\";\nimport { bar2 } from \"bar2\";\n"
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4 Done: ["bar2","foo2"]
 Info seq  [hh:mm:ss:mss] Running: *ensureProjectForOpenFiles*
 Info seq  [hh:mm:ss:mss] Before ensureProjectForOpenFiles:
 Info seq  [hh:mm:ss:mss] Project '/home/src/projects/project/tsconfig.json' (Configured)

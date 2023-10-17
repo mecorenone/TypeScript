@@ -91,6 +91,13 @@ Info seq  [hh:mm:ss:mss] 	Files (5)
 	  Entry point for implicit type library 'react-router-dom' with packageId '@types/react-router-dom/index.d.ts@16.8.4'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 5
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.decorators.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.decorators.legacy.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /library/caches/typescript/node_modules/@types/react-router-dom/package.json:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /library/caches/typescript/node_modules/@types/react-router-dom/index.d.ts:: []
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 5 Done: []
 Info seq  [hh:mm:ss:mss] Project '/dev/null/inferredProject1*' (Inferred)
 Info seq  [hh:mm:ss:mss] 	Files (5)
 
@@ -192,6 +199,12 @@ Info seq  [hh:mm:ss:mss] 	Files (4)
 	  Matched by default include pattern '**/*'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.decorators.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.decorators.legacy.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /project/index.js:: []
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4 Done: []
 Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /project/package.json 250 undefined WatchType: package.json file
 Info seq  [hh:mm:ss:mss] AutoImportProviderProject: found 1 root files in 1 dependencies in * ms
 Info seq  [hh:mm:ss:mss] Starting updateGraphWorker: Project: /dev/null/autoImportProviderProject1*
@@ -205,6 +218,9 @@ Info seq  [hh:mm:ss:mss] 	Files (1)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 1
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /library/caches/typescript/node_modules/@types/react-router-dom/index.d.ts:: []
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 1 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,
