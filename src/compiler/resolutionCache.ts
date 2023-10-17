@@ -716,6 +716,9 @@ export function createResolutionCache(
             hasInvalidatedResolutions: path =>
                 customHasInvalidatedResolutions(path) ||
                 allModuleAndTypeResolutionsAreInvalidated ||
+                resolutionsWithGlobalCachePassAreInvalidated ||
+                resolutionsWithoutGlobalCachePassAreInvalidated ||
+                unresolvedResolutionsWithGlobalCachePassAreInvalidated ||
                 !!collected?.has(path),
             hasInvalidatedLibResolutions: libFileName =>
                 customHasInvalidatedLibResolutions(libFileName) ||
@@ -752,6 +755,9 @@ export function createResolutionCache(
 
     function finishCachingPerDirectoryResolution(newProgram: Program | undefined, oldProgram: Program | undefined) {
         allModuleAndTypeResolutionsAreInvalidated = false;
+        resolutionsWithGlobalCachePassAreInvalidated = false;
+        resolutionsWithoutGlobalCachePassAreInvalidated = false;
+        unresolvedResolutionsWithGlobalCachePassAreInvalidated = false;
         nonRelativeExternalModuleResolutions.forEach(watchFailedLookupLocationOfNonRelativeModuleResolutions);
         nonRelativeExternalModuleResolutions.clear();
         // Update file watches
@@ -801,6 +807,13 @@ export function createResolutionCache(
         }
     }
 
+    function isResolutionInvalidatedPerGlobalCacheOptions(resolution: ResolutionWithFailedLookupLocations) {
+        if (resolutionsWithGlobalCachePassAreInvalidated && resolution.globalCacheResolution) return true;
+        if (resolutionsWithoutGlobalCachePassAreInvalidated && resolution.globalCacheResolution === false) return true;
+        if (unresolvedResolutionsWithGlobalCachePassAreInvalidated && resolution.globalCacheResolution && isUnresolvedOrResolvedToJs(resolution as ResolvedModuleWithFailedLookupLocations)) return true;
+        return false;
+    }
+
     interface ResolveNamesWithLocalCacheInput<Entry, SourceFile, T extends ResolutionWithFailedLookupLocations, R extends ResolutionWithResolvedFileName> {
         entries: readonly Entry[];
         containingFile: string;
@@ -846,7 +859,13 @@ export function createResolutionCache(
             // Resolution is valid if it is present and not invalidated
             if (
                 !seenNamesInFile.has(name, mode) &&
-                (allModuleAndTypeResolutionsAreInvalidated || unmatchedRedirects || !resolution || resolution.isInvalidated)
+                (
+                    allModuleAndTypeResolutionsAreInvalidated ||
+                    unmatchedRedirects ||
+                    !resolution ||
+                    resolution.isInvalidated ||
+                    isResolutionInvalidatedPerGlobalCacheOptions(resolution)
+                )
             ) {
                 const existingResolution = resolution;
                 resolution = loader.resolve(name, mode);
@@ -1455,9 +1474,6 @@ export function createResolutionCache(
             startsWithPathChecks = undefined;
             isInDirectoryChecks = undefined;
             affectingPathChecks = undefined;
-            resolutionsWithGlobalCachePassAreInvalidated = false;
-            resolutionsWithoutGlobalCachePassAreInvalidated = false;
-            unresolvedResolutionsWithGlobalCachePassAreInvalidated = false;
             return true;
         }
         let invalidated = false;
@@ -1471,11 +1487,7 @@ export function createResolutionCache(
             affectingPathChecksForFile = undefined;
         }
 
-        if (
-            !failedLookupChecks && !startsWithPathChecks && !isInDirectoryChecks && !affectingPathChecks &&
-            !resolutionsWithGlobalCachePassAreInvalidated && !resolutionsWithoutGlobalCachePassAreInvalidated &&
-            !unresolvedResolutionsWithGlobalCachePassAreInvalidated
-        ) {
+        if (!failedLookupChecks && !startsWithPathChecks && !isInDirectoryChecks && !affectingPathChecks) {
             return invalidated;
         }
 
@@ -1486,9 +1498,6 @@ export function createResolutionCache(
         isInDirectoryChecks = undefined;
         invalidated = invalidateResolutions(resolutionsWithOnlyAffectingLocations, canInvalidatedFailedLookupResolutionWithAffectingLocation) || invalidated;
         affectingPathChecks = undefined;
-        resolutionsWithGlobalCachePassAreInvalidated = false;
-        resolutionsWithoutGlobalCachePassAreInvalidated = false;
-        unresolvedResolutionsWithGlobalCachePassAreInvalidated = false;
         return invalidated;
     }
 
@@ -1508,9 +1517,6 @@ export function createResolutionCache(
     }
 
     function canInvalidatedFailedLookupResolutionWithAffectingLocation(resolution: ResolutionWithFailedLookupLocations) {
-        if (resolutionsWithGlobalCachePassAreInvalidated && resolution.globalCacheResolution) return true;
-        if (resolutionsWithoutGlobalCachePassAreInvalidated && resolution.globalCacheResolution === false) return true;
-        if (unresolvedResolutionsWithGlobalCachePassAreInvalidated && resolution.globalCacheResolution && isUnresolvedOrResolvedToJs(resolution as ResolvedModuleWithFailedLookupLocations)) return true;
         return !!affectingPathChecks && resolution.affectingLocations?.some(location => affectingPathChecks!.has(location));
     }
 
