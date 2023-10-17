@@ -89,6 +89,14 @@ Info seq  [hh:mm:ss:mss] 	Files (6)
 	  Entry point for implicit type library 'yargs' with packageId '@types/yargs/index.d.ts@1.0.0'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 6
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.decorators.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.decorators.legacy.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /node_modules/@types/yargs/package.json:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /node_modules/@types/yargs/callback.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /node_modules/@types/yargs/index.d.ts:: []
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 6 Done: []
 Info seq  [hh:mm:ss:mss] Project '/dev/null/inferredProject1*' (Inferred)
 Info seq  [hh:mm:ss:mss] 	Files (6)
 
@@ -154,6 +162,14 @@ Info seq  [hh:mm:ss:mss] 	Files (6)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 6
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.decorators.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.decorators.legacy.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /node_modules/@types/yargs/callback.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /node_modules/@types/yargs/index.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /index.ts:: []
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 6 Done: []
 Info seq  [hh:mm:ss:mss] Project '/dev/null/inferredProject1*' (Inferred)
 Info seq  [hh:mm:ss:mss] 	Files (6)
 
@@ -213,6 +229,10 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /node_modules/yargs/index.js:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /index.ts:: ["yargs"]
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2 Done: ["yargs"]
 Info seq  [hh:mm:ss:mss] FileWatcher:: Added:: WatchInfo: /node_modules/yargs/callback.js 500 undefined WatchType: Closed Script info
 Info seq  [hh:mm:ss:mss] Starting updateGraphWorker: Project: /dev/null/auxiliaryProject1*
 Info seq  [hh:mm:ss:mss] Finishing updateGraphWorker: Project: /dev/null/auxiliaryProject1* Version: 2 structureChanged: true structureIsReused:: Not Elapsed:: *ms
@@ -231,6 +251,9 @@ Info seq  [hh:mm:ss:mss] 	Files (3)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 3
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /node_modules/yargs/callback.js:: []
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 3 Done: ["yargs"]
 Info seq  [hh:mm:ss:mss] response:
     {
       "seq": 0,

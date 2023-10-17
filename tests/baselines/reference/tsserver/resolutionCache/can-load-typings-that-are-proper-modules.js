@@ -73,6 +73,10 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/cache/node_modules/@types/lib/index.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/b/app.js:: []
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2 Done: []
 TI:: Creating typing installer
 
 PolledWatches::

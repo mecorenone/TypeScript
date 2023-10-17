@@ -47,6 +47,10 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	  Entry point for implicit type library 'node'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/b/app.js:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /node_modules/@types/node/index.d.ts:: []
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2 Done: []
 TI:: Creating typing installer
 
 PolledWatches::

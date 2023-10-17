@@ -86,6 +86,13 @@ Info seq  [hh:mm:ss:mss] 	Files (5)
 	  Part of 'files' list in tsconfig.json
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 5
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.decorators.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.decorators.legacy.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /tests/cases/fourslash/server/referencesforglobals_1.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /tests/cases/fourslash/server/referencesforglobals_2.ts:: []
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 5 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,

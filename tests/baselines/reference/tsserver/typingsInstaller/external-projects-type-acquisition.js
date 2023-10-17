@@ -89,6 +89,9 @@ Info seq  [hh:mm:ss:mss] 	Files (1)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 1
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/b/file3.d.ts:: []
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 1 Done: []
 TI:: Creating typing installer
 
 PolledWatches::
@@ -491,6 +494,12 @@ Info seq  [hh:mm:ss:mss] 	Files (5)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 5
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/data/node_modules/@types/commander/index.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/data/node_modules/@types/express/index.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/data/node_modules/@types/jquery/index.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/data/node_modules/@types/moment/index.d.ts:: []
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 5 Done: []
 TI:: [hh:mm:ss:mss] Got install request
     {
       "projectName": "/a/app/test.csproj",

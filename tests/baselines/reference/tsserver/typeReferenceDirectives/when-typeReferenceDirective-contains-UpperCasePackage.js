@@ -123,6 +123,12 @@ Info seq  [hh:mm:ss:mss] 	Files (4)
 	  Entry point for implicit type library 'lib'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/lib/lib.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/test/test.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/lib/@types/uppercasepackage/index.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/myproject/lib/@app/lib/index.d.ts:: []
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 4 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,

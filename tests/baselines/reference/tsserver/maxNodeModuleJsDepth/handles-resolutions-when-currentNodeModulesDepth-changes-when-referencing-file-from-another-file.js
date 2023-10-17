@@ -78,6 +78,13 @@ Info seq  [hh:mm:ss:mss] 	Files (5)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 5
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/lib/lib.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/project1/src/node_modules/minimatch/index.js:: ["path"]
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/project1/src/node_modules/glob/index.js:: ["minimatch"]
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/project1/src/node_modules/path/index.js:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /user/username/projects/project1/src/file1.js:: ["glob","minimatch"]
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 5 Done: ["glob","minimatch","path"]
 TI:: Creating typing installer
 
 PolledWatches::

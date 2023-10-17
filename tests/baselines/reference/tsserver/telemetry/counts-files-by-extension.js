@@ -107,6 +107,14 @@ Info seq  [hh:mm:ss:mss] 	Files (6)
 	  Matched by include pattern 'src' in 'tsconfig.json'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 6
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /src/dts.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /src/js.js:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /src/jsx.jsx:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /src/moo.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /src/ts.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /src/tsx.tsx:: []
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 6 Done: []
 Info seq  [hh:mm:ss:mss] event:
     {
       "seq": 0,

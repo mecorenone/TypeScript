@@ -76,6 +76,11 @@ Info seq  [hh:mm:ss:mss] 	Files (3)
 	  Matched by default include pattern '**/*'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 3
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/dtsfile1.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/dtsfile2.d.ts:: []
+Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/jsfile.js:: []
+Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 3 Done: []
 TI:: Creating typing installer
 
 PolledWatches::
