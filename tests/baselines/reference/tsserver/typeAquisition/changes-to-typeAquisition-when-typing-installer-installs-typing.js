@@ -693,8 +693,6 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	/users/user/projects/project1/app.js SVC-1-0 "var x = require('bar');"
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2 Done: []
 Info seq  [hh:mm:ss:mss] Running: *ensureProjectForOpenFiles*
 Info seq  [hh:mm:ss:mss] Before ensureProjectForOpenFiles:
 Info seq  [hh:mm:ss:mss] Project '/users/user/projects/project1/jsconfig.json' (Configured)

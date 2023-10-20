@@ -253,9 +253,6 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/file2.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2 Done: []
 TI:: [hh:mm:ss:mss] Got install request
     {
       "projectName": "/dev/null/inferredProject1*",
@@ -939,9 +936,6 @@ Info seq  [hh:mm:ss:mss] 	Files (1)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 1
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/file1.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 1 Done: []
 TI:: [hh:mm:ss:mss] Got install request
     {
       "projectName": "/dev/null/inferredProject1*",
@@ -1146,9 +1140,6 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/file2.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2 Done: []
 TI:: [hh:mm:ss:mss] Got install request
     {
       "projectName": "/dev/null/inferredProject1*",
@@ -2069,9 +2060,6 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/file2.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2 Done: []
 TI:: [hh:mm:ss:mss] Got install request
     {
       "projectName": "/dev/null/inferredProject1*",
@@ -2755,9 +2743,6 @@ Info seq  [hh:mm:ss:mss] 	Files (1)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 1
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/file1.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 1 Done: []
 TI:: [hh:mm:ss:mss] Got install request
     {
       "projectName": "/dev/null/inferredProject1*",
@@ -2962,9 +2947,6 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /a/file2.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2 Done: []
 TI:: [hh:mm:ss:mss] Got install request
     {
       "projectName": "/dev/null/inferredProject1*",

@@ -514,9 +514,6 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	  Matched by default include pattern '**/*'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /tmp/node_modules/@types/jquery/index.d.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2 Done: []
 TI:: [hh:mm:ss:mss] Got install request
     {
       "projectName": "/jsconfig.json",
