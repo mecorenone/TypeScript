@@ -643,25 +643,9 @@ FsWatchesRecursive::
 Timeout callback:: count: 0
 4: /users/user/projects/project1/jsconfig.jsonFailedLookupInvalidation *deleted*
 
-Before running Timeout callback:: count: 0
-
-After running Timeout callback:: count: 0
-
-Before running Timeout callback:: count: 0
-
-After running Timeout callback:: count: 0
-
 Before running PendingInstalls callback:: count: 0
 
 After running PendingInstalls callback:: count: 0
-
-Before running Timeout callback:: count: 0
-
-After running Timeout callback:: count: 0
-
-Before running Timeout callback:: count: 0
-
-After running Timeout callback:: count: 0
 
 Before running Timeout callback:: count: 0
 
