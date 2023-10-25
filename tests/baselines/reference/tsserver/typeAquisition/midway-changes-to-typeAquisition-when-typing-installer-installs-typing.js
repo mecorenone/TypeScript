@@ -1029,11 +1029,3 @@ FsWatchesRecursive::
   {}
 /users/user/projects/typings/node_modules: *new*
   {}
-
-Before running Timeout callback:: count: 0
-
-After running Timeout callback:: count: 0
-
-Before running Timeout callback:: count: 0
-
-After running Timeout callback:: count: 0
