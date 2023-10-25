@@ -210,7 +210,7 @@ export function verifyResolutionCache(
     const expected = ts.createResolutionCache(resolutionHostCacheHost, actual.rootDirForResolution);
     expected.startCachingPerDirectoryResolution();
 
-    type ExpectedResolution = ts.CachedResolvedModuleWithFailedLookupLocations & ts.CachedResolvedTypeReferenceDirectiveWithFailedLookupLocations;
+    type ExpectedResolution = ts.ResolvedModuleWithFailedLookupLocations & ts.ResolvedTypeReferenceDirectiveWithFailedLookupLocations;
 
     const expectedToResolution = new Map<ExpectedResolution, ts.ResolutionWithFailedLookupLocations>();
     const resolutionToExpected = new Map<ts.ResolutionWithFailedLookupLocations, ExpectedResolution>();
