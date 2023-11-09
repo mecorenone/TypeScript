@@ -112,10 +112,6 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	  Matched by default include pattern '**/*'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /users/user/projects/typings/node_modules/@types/bar/index.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /users/user/projects/project1/app.js:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2 Done: []
 TI:: Creating typing installer
 
 PolledWatches::
@@ -755,10 +751,6 @@ Info seq  [hh:mm:ss:mss] 	Files (2)
 	  Matched by default include pattern '**/*'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /users/user/projects/typings/node_modules/@types/bar/index.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /users/user/projects/project1/app.js:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 2 Done: []
 TI:: [hh:mm:ss:mss] Got install request
     {
       "projectName": "/users/user/projects/project1/jsconfig.json",
