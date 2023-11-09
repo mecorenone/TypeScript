@@ -137,14 +137,6 @@ Info seq  [hh:mm:ss:mss] 	Files (6)
 	  Entry point for implicit type library 'react'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 6
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.decorators.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.decorators.legacy.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /project/tsconfig.json:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /project/node_modules/.pnpm/csstype@3.0.8/node_modules/csstype/index.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /project/node_modules/.pnpm/@types+react@17.0.7/node_modules/@types/react/index.d.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 6 Done: []
 Info seq  [hh:mm:ss:mss] Project '/project/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (6)
 

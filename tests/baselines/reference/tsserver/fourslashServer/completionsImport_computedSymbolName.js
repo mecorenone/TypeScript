@@ -157,14 +157,6 @@ Info seq  [hh:mm:ss:mss] 	Files (6)
 	  Entry point for implicit type library 'ts-node'
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 6
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.decorators.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /lib.decorators.legacy.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /tsconfig.json:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /node_modules/@types/node/index.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for /node_modules/@types/ts-node/index.d.ts:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 6 Done: []
 Info seq  [hh:mm:ss:mss] Project '/tsconfig.json' (Configured)
 Info seq  [hh:mm:ss:mss] 	Files (6)
 

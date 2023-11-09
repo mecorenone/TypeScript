@@ -149,14 +149,6 @@ Info seq  [hh:mm:ss:mss] 	Files (6)
 	  Root file specified for compilation
 
 Info seq  [hh:mm:ss:mss] -----------------------------------------------
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 6
-Info seq  [hh:mm:ss:mss] New unresolvedImports for c:/a/lib/lib.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for e:/myproject/node_modules/@types/prop-types/index.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for e:/myproject/node_modules/@types/react/index.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for c:/typescript/node_modules/@types/react/index.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for c:/typescript/node_modules/@types/react-router-dom/index.d.ts:: []
-Info seq  [hh:mm:ss:mss] New unresolvedImports for e:/myproject/src/app.js:: []
-Info seq  [hh:mm:ss:mss] Calculating unresolved imports list of program:: Files:: 6 Done: []
 TI:: Creating typing installer
 
 PolledWatches::
