@@ -1640,7 +1640,7 @@ export class ProjectService {
      *
      * @internal
      */
-    private watchWildcardDirectory(directory: Path, flags: WatchDirectoryFlags, configFileName: NormalizedPath, config: ParsedConfig) {
+    private watchWildcardDirectory(directory: string, flags: WatchDirectoryFlags, configFileName: NormalizedPath, config: ParsedConfig) {
         return this.watchFactory.watchDirectory(
             directory,
             fileOrDirectory => {
@@ -1657,7 +1657,7 @@ export class ProjectService {
                 const configuredProjectForConfig = this.findConfiguredProjectByProjectName(configFileName);
                 if (
                     isIgnoredFileFromWildCardWatching({
-                        watchedDirPath: directory,
+                        watchedDirPath: this.toPath(directory),
                         fileOrDirectory,
                         fileOrDirectoryPath,
                         configFileName,
@@ -2640,7 +2640,7 @@ export class ProjectService {
                 config!.watchedDirectories ||= new Map(),
                 new Map(Object.entries(config!.parsedCommandLine!.wildcardDirectories!)),
                 // Create new directory watcher
-                (directory, flags) => this.watchWildcardDirectory(directory as Path, flags, configFileName, config!),
+                (directory, flags) => this.watchWildcardDirectory(directory, flags, configFileName, config!),
             );
         }
         else {
