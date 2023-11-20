@@ -682,7 +682,11 @@ export function createWatchProgram<T extends BuilderProgram>(host: WatchCompiler
         resolutionCache.finishCachingPerDirectoryResolution(builderProgram.getProgram(), oldProgram);
 
         // Update watches
-        updateMissingFilePathsWatch(builderProgram.getProgram(), missingFilesMap || (missingFilesMap = new Map()), watchMissingFilePath);
+        updateMissingFilePathsWatch(
+            builderProgram.getProgram(),
+            missingFilesMap || (missingFilesMap = new Map()),
+            watchMissingFilePath,
+        );
         if (needsUpdateInTypeRootWatch) {
             resolutionCache.updateTypeRootsWatch();
         }
@@ -1053,11 +1057,18 @@ export function createWatchProgram<T extends BuilderProgram>(host: WatchCompiler
         }
     }
 
-    function watchMissingFilePath(missingFilePath: Path) {
+    function watchMissingFilePath(missingFilePath: Path, missingFileName: string) {
         // If watching missing referenced config file, we are already watching it so no need for separate watcher
         return parsedConfigs?.has(missingFilePath) ?
             noopFileWatcher :
-            watchFilePath(missingFilePath, missingFilePath, onMissingFileChange, PollingInterval.Medium, watchOptions, WatchType.MissingFile);
+            watchFilePath(
+                missingFilePath,
+                missingFileName,
+                onMissingFileChange,
+                PollingInterval.Medium,
+                watchOptions,
+                WatchType.MissingFile,
+            );
     }
 
     function onMissingFileChange(fileName: string, eventKind: FileWatcherEventKind, missingFilePath: Path) {

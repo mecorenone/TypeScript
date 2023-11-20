@@ -84,7 +84,6 @@ import {
     NodeFlags,
     NodeModulePathParts,
     normalizePath,
-    Path,
     pathContainsNodeModules,
     pathIsBareSpecifier,
     pathIsRelative,
@@ -200,7 +199,7 @@ function getPreferences(
 export function updateModuleSpecifier(
     compilerOptions: CompilerOptions,
     importingSourceFile: SourceFile,
-    importingSourceFileName: Path,
+    importingSourceFileName: string,
     toFileName: string,
     host: ModuleSpecifierResolutionHost,
     oldImportSpecifier: string,
@@ -221,7 +220,7 @@ export function updateModuleSpecifier(
 export function getModuleSpecifier(
     compilerOptions: CompilerOptions,
     importingSourceFile: SourceFile,
-    importingSourceFileName: Path,
+    importingSourceFileName: string,
     toFileName: string,
     host: ModuleSpecifierResolutionHost,
     options: ModuleSpecifierOptions = {},
@@ -238,15 +237,15 @@ export function getNodeModulesPackageName(
     preferences: UserPreferences,
     options: ModuleSpecifierOptions = {},
 ): string | undefined {
-    const info = getInfo(importingSourceFile.path, host);
-    const modulePaths = getAllModulePaths(importingSourceFile.path, nodeModulesFileName, host, preferences, options);
+    const info = getInfo(importingSourceFile.fileName, host);
+    const modulePaths = getAllModulePaths(importingSourceFile.fileName, nodeModulesFileName, host, preferences, options);
     return firstDefined(modulePaths, modulePath => tryGetModuleNameAsNodeModule(modulePath, info, importingSourceFile, host, compilerOptions, preferences, /*packageNameOnly*/ true, options.overrideImportMode));
 }
 
 function getModuleSpecifierWorker(
     compilerOptions: CompilerOptions,
     importingSourceFile: SourceFile,
-    importingSourceFileName: Path,
+    importingSourceFileName: string,
     toFileName: string,
     host: ModuleSpecifierResolutionHost,
     preferences: Preferences,
@@ -346,7 +345,7 @@ export function getModuleSpecifiersWithCacheInfo(
     if (!moduleSourceFile) return { moduleSpecifiers: emptyArray, computedWithoutCache };
 
     computedWithoutCache = true;
-    modulePaths ||= getAllModulePathsWorker(importingSourceFile.path, moduleSourceFile.originalFileName, host);
+    modulePaths ||= getAllModulePathsWorker(importingSourceFile.fileName, moduleSourceFile.originalFileName, host);
     const result = computeModuleSpecifiers(
         modulePaths,
         compilerOptions,
@@ -369,7 +368,7 @@ function computeModuleSpecifiers(
     options: ModuleSpecifierOptions = {},
     forAutoImport: boolean,
 ): readonly string[] {
-    const info = getInfo(importingSourceFile.path, host);
+    const info = getInfo(importingSourceFile.fileName, host);
     const preferences = getPreferences(userPreferences, compilerOptions, importingSourceFile);
     const existingSpecifier = forEach(modulePaths, modulePath =>
         forEach(
@@ -455,11 +454,12 @@ function computeModuleSpecifiers(
 
 interface Info {
     readonly getCanonicalFileName: GetCanonicalFileName;
-    readonly importingSourceFileName: Path;
-    readonly sourceDirectory: Path;
+    readonly importingSourceFileName: string;
+    readonly sourceDirectory: string;
 }
 // importingSourceFileName is separate because getEditsForFileRename may need to specify an updated path
-function getInfo(importingSourceFileName: Path, host: ModuleSpecifierResolutionHost): Info {
+function getInfo(importingSourceFileName: string, host: ModuleSpecifierResolutionHost): Info {
+    importingSourceFileName = getNormalizedAbsolutePath(importingSourceFileName, host.getCurrentDirectory());
     const getCanonicalFileName = createGetCanonicalFileName(host.useCaseSensitiveFileNames ? host.useCaseSensitiveFileNames() : true);
     const sourceDirectory = getDirectoryPath(importingSourceFileName);
     return { getCanonicalFileName, importingSourceFileName, sourceDirectory };
@@ -506,7 +506,7 @@ function getLocalModuleSpecifier(moduleFileName: string, info: Info, compilerOpt
             toPath(getDirectoryPath(compilerOptions.configFilePath), host.getCurrentDirectory(), info.getCanonicalFileName) :
             info.getCanonicalFileName(host.getCurrentDirectory());
         const modulePath = toPath(moduleFileName, projectDirectory, getCanonicalFileName);
-        const sourceIsInternal = startsWith(sourceDirectory, projectDirectory);
+        const sourceIsInternal = startsWith(info.getCanonicalFileName(sourceDirectory), projectDirectory);
         const targetIsInternal = startsWith(modulePath, projectDirectory);
         if (sourceIsInternal && !targetIsInternal || !sourceIsInternal && targetIsInternal) {
             // 1. The import path crosses the boundary of the tsconfig.json-containing directory.
@@ -623,26 +623,27 @@ export function forEachFileNameOfModule<T>(
  * Symlinks will be returned first so they are preferred over the real path.
  */
 function getAllModulePaths(
-    importingFilePath: Path,
+    importingFileName: string,
     importedFileName: string,
     host: ModuleSpecifierResolutionHost,
     preferences: UserPreferences,
     options: ModuleSpecifierOptions = {},
 ) {
+    const importingFilePath = toPath(importingFileName, host.getCurrentDirectory(), hostGetCanonicalFileName(host));
     const importedFilePath = toPath(importedFileName, host.getCurrentDirectory(), hostGetCanonicalFileName(host));
     const cache = host.getModuleSpecifierCache?.();
     if (cache) {
         const cached = cache.get(importingFilePath, importedFilePath, preferences, options);
         if (cached?.modulePaths) return cached.modulePaths;
     }
-    const modulePaths = getAllModulePathsWorker(importingFilePath, importedFileName, host);
+    const modulePaths = getAllModulePathsWorker(importingFileName, importedFileName, host);
     if (cache) {
         cache.setModulePaths(importingFilePath, importedFilePath, preferences, options, modulePaths);
     }
     return modulePaths;
 }
 
-function getAllModulePathsWorker(importingFileName: Path, importedFileName: string, host: ModuleSpecifierResolutionHost): readonly ModulePath[] {
+function getAllModulePathsWorker(importingFileName: string, importedFileName: string, host: ModuleSpecifierResolutionHost): readonly ModulePath[] {
     const getCanonicalFileName = hostGetCanonicalFileName(host);
     const allFileNames = new Map<string, { path: string; isRedirect: boolean; isInNodeModules: boolean; }>();
     let importedFileFromNodeModules = false;
@@ -662,7 +663,7 @@ function getAllModulePathsWorker(importingFileName: Path, importedFileName: stri
     // Sort by paths closest to importing file Name directory
     const sortedPaths: ModulePath[] = [];
     for (
-        let directory = getDirectoryPath(importingFileName);
+        let directory = getDirectoryPath(getCanonicalFileName(importingFileName));
         allFileNames.size !== 0;
     ) {
         const directoryStart = ensureTrailingDirectorySeparator(directory);
@@ -684,7 +685,10 @@ function getAllModulePathsWorker(importingFileName: Path, importedFileName: stri
         directory = newDirectory;
     }
     if (allFileNames.size) {
-        const remainingPaths = arrayFrom(allFileNames.values());
+        const remainingPaths = arrayFrom(
+            allFileNames.entries(),
+            ([fileName, { isRedirect, isInNodeModules }]): ModulePath => ({ path: fileName, isRedirect, isInNodeModules }),
+        );
         if (remainingPaths.length > 1) remainingPaths.sort(comparePathsByRedirectAndNumberOfDirectorySeparators);
         sortedPaths.push(...remainingPaths);
     }
@@ -967,7 +971,7 @@ function tryGetModuleNameAsNodeModule({ path, isRedirect }: ModulePath, { getCan
     // Get a path that's relative to node_modules or the importing file's path
     // if node_modules folder is in this folder or any of its parent folders, no need to keep it.
     const pathToTopLevelNodeModules = getCanonicalFileName(moduleSpecifier.substring(0, parts.topLevelNodeModulesIndex));
-    if (!(startsWith(sourceDirectory, pathToTopLevelNodeModules) || globalTypingsCacheLocation && startsWith(getCanonicalFileName(globalTypingsCacheLocation), pathToTopLevelNodeModules))) {
+    if (!(startsWith(getCanonicalFileName(sourceDirectory), pathToTopLevelNodeModules) || globalTypingsCacheLocation && startsWith(getCanonicalFileName(globalTypingsCacheLocation), pathToTopLevelNodeModules))) {
         return undefined;
     }
 

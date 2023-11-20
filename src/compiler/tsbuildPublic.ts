@@ -1,5 +1,6 @@
 import {
     AffectedFileResult,
+    arrayFrom,
     arrayToMap,
     assertType,
     BuilderProgram,
@@ -48,6 +49,7 @@ import {
     findIndex,
     flattenDiagnosticMessageText,
     forEach,
+    forEachEntry,
     ForegroundColorEscapeSequences,
     formatColorAndReset,
     getAllProjectOutputs,
@@ -75,7 +77,6 @@ import {
     isString,
     listFiles,
     loadWithModeAwareCache,
-    map,
     maybeBind,
     missingFileModifiedTime,
     ModuleResolutionCache,
@@ -416,7 +417,7 @@ interface SolutionBuilderState<T extends BuilderProgram> extends WatchFactory<Wa
     readonly filesWatched: Map<Path, FileWatcherWithModifiedTime | Date>;
     readonly outputTimeStamps: Map<ResolvedConfigFilePath, Map<Path, Date>>;
 
-    readonly lastCachedPackageJsonLookups: Map<ResolvedConfigFilePath, readonly (readonly [Path, object | boolean])[] | undefined>;
+    readonly lastCachedPackageJsonLookups: Map<ResolvedConfigFilePath, Map<Path, string> | undefined>;
 
     timerToBuildInvalidatedProject: any;
     reportFileChangeDetected: boolean;
@@ -676,6 +677,7 @@ function createStateBuildOrder<T extends BuilderProgram>(state: SolutionBuilderS
     mutateMapSkippingNewValues(state.projectErrorsReported, currentProjects, noopOnDelete);
     mutateMapSkippingNewValues(state.buildInfoCache, currentProjects, noopOnDelete);
     mutateMapSkippingNewValues(state.outputTimeStamps, currentProjects, noopOnDelete);
+    mutateMapSkippingNewValues(state.lastCachedPackageJsonLookups, currentProjects, noopOnDelete);
 
     // Remove watches for the program no longer in the solution
     if (state.watch) {
@@ -1083,14 +1085,17 @@ function createBuildOrUpdateInvalidedProject<T extends BuilderProgram>(
             config.projectReferences,
         );
         if (state.watch) {
+            const entries = state.moduleResolutionCache?.getPackageJsonInfoCache().entries();
             state.lastCachedPackageJsonLookups.set(
                 projectPath,
-                state.moduleResolutionCache && map(
-                    state.moduleResolutionCache.getPackageJsonInfoCache().entries(),
-                    ([path, data]) => ([state.host.realpath && data ? toPath(state, state.host.realpath(path)) : path, data] as const),
-                ),
+                entries && new Map(arrayFrom(
+                    entries,
+                    ([path, data]) => {
+                        path = state.host.realpath && data ? state.host.realpath(path) : path;
+                        return [toPath(state, path), path] as const;
+                    },
+                )),
             );
-
             state.builderPrograms.set(projectPath, program);
         }
         step++;
@@ -1983,9 +1988,10 @@ function getUpToDateStatusWorker<T extends BuilderProgram>(state: SolutionBuilde
     if (extendedConfigStatus) return extendedConfigStatus;
 
     // Check package file time
-    const dependentPackageFileStatus = forEach(
-        state.lastCachedPackageJsonLookups.get(resolvedPath) || emptyArray,
-        ([path]) => checkConfigFileUpToDateStatus(state, path, oldestOutputFileTime, oldestOutputFileName!),
+    const packageJsonLookups = state.lastCachedPackageJsonLookups.get(resolvedPath);
+    const dependentPackageFileStatus = packageJsonLookups && forEachEntry(
+        packageJsonLookups,
+        path => checkConfigFileUpToDateStatus(state, path, oldestOutputFileTime, oldestOutputFileName!),
     );
     if (dependentPackageFileStatus) return dependentPackageFileStatus;
 
@@ -2433,10 +2439,10 @@ function watchPackageJsonFiles<T extends BuilderProgram>(state: SolutionBuilderS
         getOrCreateValueMapFromConfigFileMap(state.allWatchedPackageJsonFiles, resolvedPath),
         new Map(state.lastCachedPackageJsonLookups.get(resolvedPath)),
         {
-            createNewValue: (path, _input) =>
+            createNewValue: (_path, input) =>
                 watchFile(
                     state,
-                    path,
+                    input,
                     () => invalidateProjectAndScheduleBuilds(state, resolvedPath, ProgramUpdateLevel.Update),
                     PollingInterval.High,
                     parsed?.watchOptions,

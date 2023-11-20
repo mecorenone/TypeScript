@@ -45,7 +45,6 @@ import {
     removeFileExtension,
     removeIgnoredPath,
     returnNoopFileWatcher,
-    returnTrue,
     ScriptKind,
     setSysLog,
     SortedArray,
@@ -315,8 +314,8 @@ export function createCachedDirectoryStructureHost(host: DirectoryStructureHost,
 
         const baseName = getBaseNameOfFileName(fileOrDirectory);
         const fsQueryResult: FileAndDirectoryExistence = {
-            fileExists: host.fileExists(fileOrDirectoryPath),
-            directoryExists: host.directoryExists(fileOrDirectoryPath),
+            fileExists: host.fileExists(fileOrDirectory),
+            directoryExists: host.directoryExists(fileOrDirectory),
         };
         if (fsQueryResult.directoryExists || hasEntry(parentResult.sortedAndCanonicalizedDirectories, getCanonicalFileName(baseName))) {
             // Folder added or removed, clear the cache instead of updating the folder and its structure
@@ -489,15 +488,12 @@ export function updatePackageJsonWatch(
 export function updateMissingFilePathsWatch(
     program: Program,
     missingFileWatches: Map<Path, FileWatcher>,
-    createMissingFileWatch: (missingFilePath: Path) => FileWatcher,
+    createMissingFileWatch: (missingFilePath: Path, missingFileName: string) => FileWatcher,
 ) {
-    const missingFilePaths = program.getMissingFilePaths();
-    // TODO(rbuckton): Should be a `Set` but that requires changing the below code that uses `mutateMap`
-    const newMissingFilePathMap = arrayToMap(missingFilePaths, identity, returnTrue);
     // Update the missing file paths watcher
     mutateMap(
         missingFileWatches,
-        newMissingFilePathMap,
+        program.getMissingFilePaths(),
         {
             // Watch the missing files
             createNewValue: createMissingFileWatch,

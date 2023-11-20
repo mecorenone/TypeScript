@@ -4684,7 +4684,7 @@ export interface Program extends ScriptReferenceHost {
      *
      * @internal
      */
-    getMissingFilePaths(): readonly Path[];
+    getMissingFilePaths(): Map<Path, string>;
     /** @internal */
     getModuleResolutionCache(): ModuleResolutionCache | undefined;
     /** @internal */

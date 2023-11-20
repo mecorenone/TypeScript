@@ -514,7 +514,7 @@ function verifyProgram(service: ts.server.ProjectService, project: ts.server.Pro
 
 interface ResolveSingleModuleNameWithoutWatchingData {
     resolutionToData: Map<ts.ResolutionWithFailedLookupLocations, Pick<ts.ResolvedModuleWithFailedLookupLocations, "failedLookupLocations" | "affectingLocations" | "resolutionDiagnostics">>;
-    packageJsonMap: Map<ts.Path, ts.PackageJsonInfo | boolean> | undefined;
+    packageJsonMap: Map<string, ts.PackageJsonInfo | boolean> | undefined;
 }
 
 function beforeResolveSingleModuleNameWithoutWatching(
@@ -534,10 +534,10 @@ function beforeResolveSingleModuleNameWithoutWatching(
     });
 
     // We also care about package json info cache
-    const packageJsonMap = moduleResolutionCache.getPackageJsonInfoCache().getInternalMap();
+    const entries = moduleResolutionCache.getPackageJsonInfoCache().entries();
     return {
         resolutionToData,
-        packageJsonMap: packageJsonMap && new Map(packageJsonMap),
+        packageJsonMap: entries && new Map(entries),
     };
 }
 
@@ -557,7 +557,7 @@ function afterResolveSingleModuleNameWithoutWatching(
 
     verifyMap(
         data.packageJsonMap,
-        moduleResolutionCache.getPackageJsonInfoCache().getInternalMap(),
+        new Map(moduleResolutionCache.getPackageJsonInfoCache().entries()),
         (expected, actual, caption) => ts.Debug.assert(expected === actual, caption),
         `Expected packageJsonInfo to not change: ${moduleName} ${containingFile}`,
     );

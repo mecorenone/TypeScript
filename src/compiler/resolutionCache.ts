@@ -54,7 +54,7 @@ import {
     normalizePath,
     PackageId,
     packageIdToString,
-    PackageJsonInfo,
+    PackageJsonInfoCache,
     parseNodeModuleFromPath,
     Path,
     PathPathComponents,
@@ -1147,7 +1147,7 @@ export function createResolutionCache(resolutionHost: ResolutionCacheHost, rootD
                 watcher: canWatchAffectingLocation(resolutionHost.toPath(locationToWatch)) ?
                     resolutionHost.watchAffectingFileLocation(locationToWatch, (fileName, eventKind) => {
                         cachedDirectoryStructureHost?.addOrDeleteFile(fileName, resolutionHost.toPath(locationToWatch), eventKind);
-                        invalidateAffectingFileWatcher(locationToWatch, moduleResolutionCache.getPackageJsonInfoCache().getInternalMap());
+                        invalidateAffectingFileWatcher(locationToWatch, moduleResolutionCache.getPackageJsonInfoCache());
                         resolutionHost.scheduleInvalidateResolutionsOfFailedLookupLocations();
                     }) : noopFileWatcher,
                 resolutions: isSymlink ? 0 : resolutions,
@@ -1179,12 +1179,12 @@ export function createResolutionCache(resolutionHost: ResolutionCacheHost, rootD
         }
     }
 
-    function invalidateAffectingFileWatcher(path: string, packageJsonMap: Map<Path, PackageJsonInfo | boolean> | undefined) {
+    function invalidateAffectingFileWatcher(path: string, packageJsonMap: PackageJsonInfoCache) {
         const watcher = fileWatchesOfAffectingLocations.get(path);
         if (watcher?.resolutions) (affectingPathChecks ??= new Set()).add(path);
         if (watcher?.files) (affectingPathChecksForFile ??= new Set()).add(path);
         watcher?.symlinks?.forEach(path => invalidateAffectingFileWatcher(path, packageJsonMap));
-        packageJsonMap?.delete(resolutionHost.toPath(path));
+        packageJsonMap.deletePackageJsonInfo(path);
     }
 
     function watchFailedLookupLocationOfNonRelativeModuleResolutions(resolutions: ResolutionWithFailedLookupLocations[], name: string) {
@@ -1415,9 +1415,14 @@ export function createResolutionCache(resolutionHost: ResolutionCacheHost, rootD
     }
 
     function invalidatePackageJsonMap() {
-        const packageJsonMap = moduleResolutionCache.getPackageJsonInfoCache().getInternalMap();
+        const packageJsonMap = moduleResolutionCache.getPackageJsonInfoCache().entries();
         if (packageJsonMap && (failedLookupChecks || startsWithPathChecks || isInDirectoryChecks)) {
-            packageJsonMap.forEach((_value, path) => isInvalidatedFailedLookup(path) ? packageJsonMap.delete(path) : undefined);
+            for (const key of packageJsonMap) {
+                const path = resolutionHost.toPath(key[0]);
+                if (isInvalidatedFailedLookup(path)) {
+                    moduleResolutionCache.getPackageJsonInfoCache().deletePackageJsonInfo(key[0]);
+                }
+            }
         }
     }
 

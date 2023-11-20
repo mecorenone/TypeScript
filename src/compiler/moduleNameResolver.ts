@@ -1,7 +1,6 @@
 import {
     append,
     appendIfUnique,
-    arrayFrom,
     arrayIsEqualTo,
     changeAnyExtension,
     CharacterCodes,
@@ -904,8 +903,8 @@ export interface NonRelativeModuleNameResolutionCache extends NonRelativeNameRes
 export interface PackageJsonInfoCache {
     /** @internal */ getPackageJsonInfo(packageJsonPath: string): PackageJsonInfo | boolean | undefined;
     /** @internal */ setPackageJsonInfo(packageJsonPath: string, info: PackageJsonInfo | boolean): void;
-    /** @internal */ entries(): [Path, PackageJsonInfo | boolean][];
-    /** @internal */ getInternalMap(): Map<Path, PackageJsonInfo | boolean> | undefined;
+    /** @internal */ entries(): IterableIterator<[string, PackageJsonInfo | boolean]> | undefined;
+    /** @internal */ deletePackageJsonInfo(packageJsonPath: string): void;
     clear(): void;
     /** @internal */ isReadonly?: boolean;
 }
@@ -1021,23 +1020,46 @@ export function createCacheWithRedirects<K, V>(ownOptions: CompilerOptions | und
 }
 
 function createPackageJsonInfoCache(currentDirectory: string, getCanonicalFileName: (s: string) => string): PackageJsonInfoCache {
-    let cache: Map<Path, PackageJsonInfo | boolean> | undefined;
-    return { getPackageJsonInfo, setPackageJsonInfo, clear, entries, getInternalMap };
+    let cache: Map<string, PackageJsonInfo | boolean> | undefined;
+    let canonicalPathToCacheKey: Map<string, string> | undefined;
+    return { getPackageJsonInfo, setPackageJsonInfo, deletePackageJsonInfo, clear, entries };
     function getPackageJsonInfo(packageJsonPath: string) {
-        return cache?.get(toPath(packageJsonPath, currentDirectory, getCanonicalFileName));
+        if (!cache) return undefined;
+        const absolute = getNormalizedAbsolutePath(packageJsonPath, currentDirectory);
+        const result = cache.get(absolute);
+        if (result !== undefined) return result;
+        if (!canonicalPathToCacheKey) return undefined;
+        const path = getCanonicalFileName(absolute);
+        if (path === absolute) return undefined;
+        const cacheKey = canonicalPathToCacheKey.get(path);
+        return cacheKey !== undefined ? cache.get(cacheKey) : undefined;
     }
     function setPackageJsonInfo(packageJsonPath: string, info: PackageJsonInfo | boolean) {
-        (cache ||= new Map()).set(toPath(packageJsonPath, currentDirectory, getCanonicalFileName), info);
+        const absolute = getNormalizedAbsolutePath(packageJsonPath, currentDirectory);
+        (cache ||= new Map()).set(absolute, info);
+        const path = getCanonicalFileName(absolute);
+        if (path !== absolute) {
+            (canonicalPathToCacheKey ??= new Map()).set(path, absolute);
+        }
+    }
+    function deletePackageJsonInfo(packageJsonPath: string) {
+        if (!cache) return;
+        const absolute = getNormalizedAbsolutePath(packageJsonPath, currentDirectory);
+        cache.delete(absolute);
+        if (canonicalPathToCacheKey) {
+            const path = getCanonicalFileName(absolute);
+            const cacheKey = canonicalPathToCacheKey.get(path);
+            if (cacheKey !== undefined) {
+                cache.delete(cacheKey);
+                canonicalPathToCacheKey.delete(path);
+            }
+        }
     }
     function clear() {
         cache = undefined;
     }
     function entries() {
-        const iter = cache?.entries();
-        return iter ? arrayFrom(iter) : [];
-    }
-    function getInternalMap() {
-        return cache;
+        return cache?.entries();
     }
 }
 

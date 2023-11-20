@@ -421,7 +421,7 @@ export interface LanguageServiceHost extends GetEffectiveTypeRootsHost, MinimalR
     /** @internal */ getSourceFileLike?(fileName: string): SourceFileLike | undefined;
     /** @internal */ getPackageJsonsVisibleToFile?(fileName: string, rootDir?: string): readonly ProjectPackageJsonInfo[];
     /** @internal */ getNearestAncestorDirectoryWithPackageJson?(fileName: string): string | undefined;
-    /** @internal */ getPackageJsonsForAutoImport?(rootDir?: string): readonly ProjectPackageJsonInfo[];
+    /** @internal */ getPackageJsonsForAutoImport?(): readonly ProjectPackageJsonInfo[];
     /** @internal */ getCachedExportInfoMap?(): ExportInfoMap;
     /** @internal */ getModuleSpecifierCache?(): ModuleSpecifierCache;
     /** @internal */ setCompilerHost?(host: CompilerHost): void;
