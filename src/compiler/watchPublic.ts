@@ -1087,16 +1087,11 @@ export function createWatchProgram<T extends BuilderProgram>(host: WatchCompiler
     }
 
     function watchConfigFileWildCardDirectories() {
-        if (wildcardDirectories) {
-            updateWatchingWildcardDirectories(
-                watchedWildcardDirectories || (watchedWildcardDirectories = new Map()),
-                new Map(Object.entries(wildcardDirectories)),
-                watchWildcardDirectory,
-            );
-        }
-        else if (watchedWildcardDirectories) {
-            clearMap(watchedWildcardDirectories, closeFileWatcherOf);
-        }
+        updateWatchingWildcardDirectories(
+            watchedWildcardDirectories || (watchedWildcardDirectories = new Map()),
+            wildcardDirectories,
+            watchWildcardDirectory,
+        );
     }
 
     function watchWildcardDirectory(directory: string, flags: WatchDirectoryFlags) {
@@ -1198,56 +1193,50 @@ export function createWatchProgram<T extends BuilderProgram>(host: WatchCompiler
             WatchType.ConfigFileOfReferencedProject,
         );
         // Watch Wild card
-        if (commandLine.parsedCommandLine?.wildcardDirectories) {
-            updateWatchingWildcardDirectories(
-                commandLine.watchedDirectories ||= new Map(),
-                new Map(Object.entries(commandLine.parsedCommandLine?.wildcardDirectories)),
-                (directory, flags) =>
-                    watchDirectory(
-                        directory,
-                        fileOrDirectory => {
-                            const fileOrDirectoryPath = toPath(fileOrDirectory);
-                            // Since the file existence changed, update the sourceFiles cache
-                            if (cachedDirectoryStructureHost) {
-                                cachedDirectoryStructureHost.addOrDeleteFileOrDirectory(fileOrDirectory, fileOrDirectoryPath);
-                            }
-                            nextSourceFileVersion(fileOrDirectoryPath);
+        updateWatchingWildcardDirectories(
+            commandLine.watchedDirectories ||= new Map(),
+            commandLine.parsedCommandLine?.wildcardDirectories,
+            (directory, flags) =>
+                watchDirectory(
+                    directory,
+                    fileOrDirectory => {
+                        const fileOrDirectoryPath = toPath(fileOrDirectory);
+                        // Since the file existence changed, update the sourceFiles cache
+                        if (cachedDirectoryStructureHost) {
+                            cachedDirectoryStructureHost.addOrDeleteFileOrDirectory(fileOrDirectory, fileOrDirectoryPath);
+                        }
+                        nextSourceFileVersion(fileOrDirectoryPath);
 
-                            const config = parsedConfigs?.get(configPath);
-                            if (!config?.parsedCommandLine) return;
-                            if (
-                                isIgnoredFileFromWildCardWatching({
-                                    watchedDirPath: toPath(directory),
-                                    fileOrDirectory,
-                                    fileOrDirectoryPath,
-                                    configFileName,
-                                    options: config.parsedCommandLine.options,
-                                    program: config.parsedCommandLine.fileNames,
-                                    currentDirectory,
-                                    useCaseSensitiveFileNames,
-                                    writeLog,
-                                    toPath,
-                                })
-                            ) return;
+                        const config = parsedConfigs?.get(configPath);
+                        if (!config?.parsedCommandLine) return;
+                        if (
+                            isIgnoredFileFromWildCardWatching({
+                                watchedDirPath: toPath(directory),
+                                fileOrDirectory,
+                                fileOrDirectoryPath,
+                                configFileName,
+                                options: config.parsedCommandLine.options,
+                                program: config.parsedCommandLine.fileNames,
+                                currentDirectory,
+                                useCaseSensitiveFileNames,
+                                writeLog,
+                                toPath,
+                            })
+                        ) return;
 
-                            // Reload is pending, do the reload
-                            if (config.updateLevel !== ProgramUpdateLevel.Full) {
-                                config.updateLevel = ProgramUpdateLevel.RootNamesAndUpdate;
+                        // Reload is pending, do the reload
+                        if (config.updateLevel !== ProgramUpdateLevel.Full) {
+                            config.updateLevel = ProgramUpdateLevel.RootNamesAndUpdate;
 
-                                // Schedule Update the program
-                                scheduleProgramUpdate();
-                            }
-                        },
-                        flags,
-                        commandLine.parsedCommandLine?.watchOptions || watchOptions,
-                        WatchType.WildcardDirectoryOfReferencedProject,
-                    ),
-            );
-        }
-        else if (commandLine.watchedDirectories) {
-            clearMap(commandLine.watchedDirectories, closeFileWatcherOf);
-            commandLine.watchedDirectories = undefined;
-        }
+                            // Schedule Update the program
+                            scheduleProgramUpdate();
+                        }
+                    },
+                    flags,
+                    commandLine.parsedCommandLine?.watchOptions || watchOptions,
+                    WatchType.WildcardDirectoryOfReferencedProject,
+                ),
+        );
         // Watch extended config files
         updateExtendedConfigFilesWatches(
             configPath,

@@ -1,7 +1,6 @@
 import {
     AffectedFileResult,
     arrayFrom,
-    arrayToMap,
     assertType,
     BuilderProgram,
     BuildInfo,
@@ -49,7 +48,7 @@ import {
     findIndex,
     flattenDiagnosticMessageText,
     forEach,
-    forEachEntry,
+    forEachKey,
     ForegroundColorEscapeSequences,
     formatColorAndReset,
     getAllProjectOutputs,
@@ -410,14 +409,14 @@ interface SolutionBuilderState<T extends BuilderProgram> extends WatchFactory<Wa
     // Watch state
     readonly watch: boolean;
     readonly allWatchedWildcardDirectories: Map<ResolvedConfigFilePath, Map<string, WildcardDirectoryWatcher>>;
-    readonly allWatchedInputFiles: Map<ResolvedConfigFilePath, Map<Path, FileWatcher>>;
+    readonly allWatchedInputFiles: Map<ResolvedConfigFilePath, Map<string, FileWatcher>>;
     readonly allWatchedConfigFiles: Map<ResolvedConfigFilePath, FileWatcher>;
     readonly allWatchedExtendedConfigFiles: Map<Path, SharedExtendedConfigFileWatcher<ResolvedConfigFilePath>>;
     readonly allWatchedPackageJsonFiles: Map<ResolvedConfigFilePath, Map<Path, FileWatcher>>;
     readonly filesWatched: Map<Path, FileWatcherWithModifiedTime | Date>;
     readonly outputTimeStamps: Map<ResolvedConfigFilePath, Map<Path, Date>>;
 
-    readonly lastCachedPackageJsonLookups: Map<ResolvedConfigFilePath, Map<Path, string> | undefined>;
+    readonly lastCachedPackageJsonLookups: Map<ResolvedConfigFilePath, Set<string> | undefined>;
 
     timerToBuildInvalidatedProject: any;
     reportFileChangeDetected: boolean;
@@ -661,9 +660,9 @@ function createStateBuildOrder<T extends BuilderProgram>(state: SolutionBuilderS
     state.resolvedConfigFilePaths.clear();
 
     // TODO(rbuckton): Should be a `Set`, but that requires changing the code below that uses `mutateMapSkippingNewValues`
-    const currentProjects = new Map(
+    const currentProjects = new Set(
         getBuildOrderFromAnyBuildOrder(buildOrder).map(
-            resolved => [toResolvedConfigFilePath(state, resolved), true as const],
+            resolved => toResolvedConfigFilePath(state, resolved),
         ),
     );
 
@@ -1088,12 +1087,9 @@ function createBuildOrUpdateInvalidedProject<T extends BuilderProgram>(
             const entries = state.moduleResolutionCache?.getPackageJsonInfoCache().entries();
             state.lastCachedPackageJsonLookups.set(
                 projectPath,
-                entries && new Map(arrayFrom(
+                entries && new Set(arrayFrom(
                     entries,
-                    ([path, data]) => {
-                        path = state.host.realpath && data ? state.host.realpath(path) : path;
-                        return [toPath(state, path), path] as const;
-                    },
+                    ([path, data]) => state.host.realpath && data ? state.host.realpath(path) : path,
                 )),
             );
             state.builderPrograms.set(projectPath, program);
@@ -1989,7 +1985,7 @@ function getUpToDateStatusWorker<T extends BuilderProgram>(state: SolutionBuilde
 
     // Check package file time
     const packageJsonLookups = state.lastCachedPackageJsonLookups.get(resolvedPath);
-    const dependentPackageFileStatus = packageJsonLookups && forEachEntry(
+    const dependentPackageFileStatus = packageJsonLookups && forEachKey(
         packageJsonLookups,
         path => checkConfigFileUpToDateStatus(state, path, oldestOutputFileTime, oldestOutputFileName!),
     );
@@ -2382,7 +2378,7 @@ function watchWildCardDirectories<T extends BuilderProgram>(state: SolutionBuild
     if (!state.watch) return;
     updateWatchingWildcardDirectories(
         getOrCreateValueMapFromConfigFileMap(state.allWatchedWildcardDirectories, resolvedPath),
-        new Map(Object.entries(parsed.wildcardDirectories!)),
+        parsed.wildcardDirectories,
         (dir, flags) =>
             state.watchDirectory(
                 dir,
@@ -2416,9 +2412,9 @@ function watchInputFiles<T extends BuilderProgram>(state: SolutionBuilderState<T
     if (!state.watch) return;
     mutateMap(
         getOrCreateValueMapFromConfigFileMap(state.allWatchedInputFiles, resolvedPath),
-        arrayToMap(parsed.fileNames, fileName => toPath(state, fileName)),
+        new Set(parsed.fileNames),
         {
-            createNewValue: (_path, input) =>
+            createNewValue: input =>
                 watchFile(
                     state,
                     input,
@@ -2437,9 +2433,9 @@ function watchPackageJsonFiles<T extends BuilderProgram>(state: SolutionBuilderS
     if (!state.watch || !state.lastCachedPackageJsonLookups) return;
     mutateMap(
         getOrCreateValueMapFromConfigFileMap(state.allWatchedPackageJsonFiles, resolvedPath),
-        new Map(state.lastCachedPackageJsonLookups.get(resolvedPath)),
+        state.lastCachedPackageJsonLookups.get(resolvedPath),
         {
-            createNewValue: (_path, input) =>
+            createNewValue: input =>
                 watchFile(
                     state,
                     input,
