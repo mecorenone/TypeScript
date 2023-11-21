@@ -68,6 +68,7 @@ describe("unittests:: tsserver:: packageJsonInfo::", () => {
     it("finds package.json on demand, watches for deletion, and removes them from cache", () => {
         // Initialize project with package.json
         const { session, projectService, host } = setup();
+
         projectService.getPackageJsonsVisibleToFile("/src/whatever/blah.ts");
         assert.ok(projectService.packageJsonCache.getInDirectory("/"));
 
@@ -132,5 +133,13 @@ function setup(files: readonly File[] = [tsConfig, packageJson]) {
     const host = createServerHost(files);
     const session = new TestSession(host);
     openFilesForSession([files[0]], session);
-    return { host, session, projectService: session.getProjectService() };
+    const projectService = session.getProjectService();
+    const getPackageJsonsVisibleToFile = projectService.getPackageJsonsVisibleToFile;
+    projectService.getPackageJsonsVisibleToFile = (fileName, rootDir) => {
+        session.host.baselineHost(`getPackageJsonsVisibleToFile:: ${fileName} ${rootDir}`);
+        const result = getPackageJsonsVisibleToFile.call(projectService, fileName, rootDir);
+        session.host.baselineHost(`getPackageJsonsVisibleToFile:: ${fileName} ${rootDir}:: Result:: ${jsonToReadableText(result)}`);
+        return result;
+    };
+    return { host, session, projectService };
 }
