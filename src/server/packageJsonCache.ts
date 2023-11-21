@@ -16,6 +16,7 @@ import {
 /** @internal */
 export interface PackageJsonCache {
     addOrUpdate(file: string, path: Path): void;
+    invalidate(path: Path): void;
     delete(fileName: Path): void;
     getInDirectory(directory: string): ProjectPackageJsonInfo | undefined;
     directoryHasPackageJson(directory: string): Ternary;
@@ -28,6 +29,7 @@ export function createPackageJsonCache(host: ProjectService): PackageJsonCache {
     const directoriesWithoutPackageJson = new Map<Path, true>();
     return {
         addOrUpdate,
+        invalidate,
         delete: fileName => {
             packageJsons.delete(fileName);
             directoriesWithoutPackageJson.set(getDirectoryPath(fileName), true);
@@ -56,6 +58,11 @@ export function createPackageJsonCache(host: ProjectService): PackageJsonCache {
     function addOrUpdate(file: string, path: Path) {
         const packageJsonInfo = Debug.checkDefined(createPackageJsonInfo(file, host.host));
         packageJsons.set(path, packageJsonInfo);
+        directoriesWithoutPackageJson.delete(getDirectoryPath(path));
+    }
+
+    function invalidate(path: Path) {
+        packageJsons.delete(path);
         directoriesWithoutPackageJson.delete(getDirectoryPath(path));
     }
 
